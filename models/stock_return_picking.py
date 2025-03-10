@@ -25,6 +25,4 @@ class ReturnPickingInherit(models.TransientModel):
                         allowed_qty, precision_rounding=return_line.move_id.product_id.uom_id.rounding
                     )
                     if return_line.quantity > allowed_qty:
-                        raise UserError(_(
-                            "The return quantity for product '%s' is greater than the available quantity (%s)."
-                        ) % (return_line.product_id.display_name, allowed_qty))
+                        raise UserError(_("La cantidad de devolución para el producto '%s' es mayor que la cantidad disponible (%s).") % (return_line.product_id.display_name, allowed_qty))
